@@ -1,0 +1,29 @@
+@use '../../styles//mixins.scss';
+@use '../../styles/constants.scss';
+
+.case-list {
+	@include mixins.reset-list;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	flex-wrap: wrap;
+	align-items: flex-start;
+
+	@include mixins.maxBp(constants.$bp-1024) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include mixins.maxBp(constants.$bp-768) {
+		grid-template-columns: 1fr;
+	}
+
+}
+
+.case {
+	// @include mixins.reset-list;
+	// display: flex;
+	// flex-direction: column;
+	// gap: 20px;
+	// flex-wrap: wrap;
+	// align-items: flex-start;
+}

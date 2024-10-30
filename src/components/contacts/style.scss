@@ -1,0 +1,21 @@
+@use '../../styles//mixins.scss';
+@use '../../styles/constants.scss';
+
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+}
+
+.contacts__link {
+	cursor: pointer;
+	transition: opacity var(--transition);
+
+
+	&:hover,
+	&:focus {
+		opacity: 0.8;
+	}
+}

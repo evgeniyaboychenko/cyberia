@@ -1,0 +1,20 @@
+@mixin maxBp($point) {
+    @media only screen and (max-width: #{$point - 1}px) {
+        @content;
+    }
+}
+
+@mixin reset-list($padding: 0, $margin: 0) {
+    padding: $padding;
+    margin: $margin;
+    list-style: none;
+}
+
+@mixin text {
+    font-family: var(--font-family);
+    font-size: var(--text-size);
+    font-style: normal;
+    font-weight: var(--text-weight);
+    line-height: var(--text-line-height);
+    text-transform: none;
+}

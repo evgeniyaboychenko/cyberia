@@ -1,0 +1,96 @@
+@use '../../styles//mixins.scss';
+@use '../../styles/constants.scss';
+
+.header {
+	--font-family: var(--font-family-3);
+	--text-size: 18px;
+	--text-weight: 400;
+	--text-line-height: 21.6px;
+	@include mixins.text;
+	background-color: var(--page-bc-gray);
+	padding-top: 100px;
+	padding-bottom: 100px;
+
+
+}
+
+.header__wrap {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	gap: 100px;
+	justify-content: start;
+	align-items: center;
+
+	// @include mixins.maxBp(constants.$bp-768) {
+	// 	grid-template-columns: 1fr;
+	// 	gap: 10px;
+	// 	// align-items: center;
+	// 	// justify-content: center;
+	// }
+}
+
+
+
+.header__logo img {
+	width: 132px;
+}
+
+.header__logo {
+	transition: opacity var(--transition);
+}
+
+.header__logo:hover,
+.header__logo:focus {
+	opacity: 0.8;
+}
+
+
+
+.header__burger-menu {
+	display: none;
+	background-color: transparent;
+	border: none;
+	transition: opacity var(--transition);
+	cursor: pointer;
+
+	@include mixins.maxBp(constants.$bp-768) {
+		display: block;
+	}
+}
+
+.header__burger-menu:hover,
+.header__burger-menu:focus {
+	opacity: 0.8;
+}
+
+// .btn {
+// 	--btn-px: 5px;
+// 	--btn-py: 5px;
+// 	--btn-bg: transparent;
+// 	--btn-bdc: transparent;
+// 	--btn-bdrs: 0;
+// 	--btn-c: #999999;
+
+// 	font-family: var(--font-family-1);
+// 	font-size: 18px;
+// 	font-style: normal;
+// 	font-weight: 400;
+// 	line-height: 34px;
+// 	text-transform: none;
+// 	display: inline-flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	padding: var(--btn-py) var(--btn-px);
+// 	overflow: hidden;
+// 	color: var(--btn-c);
+// 	text-decoration: none;
+// 	cursor: pointer;
+// 	background-color: var(--btn-bg);
+// 	border: none;
+// 	border-radius: var(--btn-bdrs);
+// 	transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+// 	&:hover {
+// 		opacity: 0.7;
+// 	}
+// }

@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'Open Sans';
+	src: local('Open Sans Regular'), local('OpenSans-Regular'),
+		url('/src/assets/fonts/subset-OpenSans-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Rubik';
+	src: local('Rubik Light'), local('Rubik-Light'),
+		url('/src/assets/fonts/Rubik-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Fira Sans Condensed';
+	src: local('Fira Sans Condensed Regular'), local('FiraSansCondensed-Regular'),
+		url('/src/assets/fonts/subset-FiraSansCondensed-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

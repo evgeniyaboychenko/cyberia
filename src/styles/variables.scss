@@ -1,0 +1,26 @@
+@use './mixins';
+@use './constants';
+
+:root {
+	--font-family-1: 'Open Sans', sans-serif;
+	--font-family-2: 'Rubik', sans-serif;
+	--font-family-3: 'Fira Sans Condensed', sans-serif;
+
+	--page-bc: linear-gradient(180deg, #24252F 0%, #31313F 36.46%, #242530 100%);
+	--page-bc-gray: #313341;
+	--page-bc-2: #24252F;
+
+	--color-text-1: #FFFFFF;
+	--color-text-2: #EEF3FF;
+	--color-text-3: #9AA8BA;
+
+
+	--color-white: #FFFFFF;
+	--color-blue: #2D76F9;
+	--color-gray: #2B2D3A;
+
+	--padding: 24px;
+	--content-area: 1240px;
+
+	--transition: 0.3s ease-in-out;
+}

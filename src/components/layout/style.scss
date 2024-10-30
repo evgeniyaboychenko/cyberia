@@ -1,0 +1,17 @@
+@use '../../styles//mixins.scss';
+@use '../../styles/constants.scss';
+
+.layout {
+	width: 100%;
+	max-width: var(--content-area);
+	margin: 0 auto;
+	padding: 0 var(--padding);
+}
+
+.layout--no-mobile {
+	@include mixins.maxBp(constants.$bp-768) {
+		width: 100%;
+		max-width: 100%;
+		padding: 0;
+	}
+}

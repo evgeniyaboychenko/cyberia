@@ -1,0 +1,45 @@
+@use '../../styles//mixins.scss';
+@use '../../styles/constants.scss';
+
+.breadcrumbs {
+	--font-family: var(--font-family-3);
+	--text-size: 18px;
+	--text-weight: 400;
+	--text-line-height: 21.6px;
+	@include mixins.text;
+	color: var(--color-text-3)
+}
+
+.breadcrumbs__list {
+	@include mixins.reset-list;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+.breadcrumbs__item {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: -15px;
+		content: '/';
+		transform: translate3d(0, -50%, 0);
+	}
+}
+
+.breadcrumbs__item:last-child {
+	position: relative;
+
+	&::after {
+
+		content: '';
+
+
+	}
+}
+
+.breadcrumbs__item.is-active a {
+	pointer-events: none;
+}

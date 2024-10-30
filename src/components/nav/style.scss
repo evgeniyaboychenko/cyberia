@@ -1,0 +1,50 @@
+@use '../../styles//mixins.scss';
+@use '../../styles/constants.scss';
+
+.nav__list {
+	@include mixins.reset-list;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+.nav__item a {
+	transition: opacity var(--transition);
+
+	&:hover,
+	&:focus {
+		opacity: 0.8;
+	}
+}
+
+.nav--burger-menu {
+	color: var(--color-text-2);
+}
+
+.nav--header {
+	@include mixins.maxBp(constants.$bp-768) {
+		display: none;
+	}
+}
+
+
+.nav--header .nav__list {
+	@include mixins.reset-list;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+
+.nav--footer .nav__list {
+	@include mixins.reset-list;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	row-gap: 20px;
+	column-gap: 20px;
+}
