@@ -35,4 +35,4 @@ export const caseList = [
     description: 'Изображение',
     image: '/src/assets/images/png/6.png',
   },
-]
+];

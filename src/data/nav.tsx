@@ -19,4 +19,4 @@ export const navList = [
     text: 'Контакты',
     href: '#',
   },
-]
+];

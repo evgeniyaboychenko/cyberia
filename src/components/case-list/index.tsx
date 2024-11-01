@@ -1,6 +1,6 @@
-import { caseList } from '../../data/cases'
-import Case from '../case'
-import './style.scss'
+import { caseList } from '../../data/cases';
+import Case from '../case';
+import './style.scss';
 
 function CaseList() {
   // const { href, title, img, description } = props
@@ -13,7 +13,7 @@ function CaseList() {
         </li>
       ))}
     </ul>
-  )
+  );
 }
 
-export default CaseList
+export default CaseList;

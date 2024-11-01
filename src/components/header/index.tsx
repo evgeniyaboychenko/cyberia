@@ -1,15 +1,15 @@
-import logo from '../../assets/images/svg/logo.svg'
-import Layout from '../layout'
-import Nav from '../nav'
-import { Link } from 'react-router-dom'
-import './style.scss'
+import logo from '../../assets/images/svg/logo.svg';
+import Layout from '../layout';
+import Nav from '../nav';
+import { Link } from 'react-router-dom';
+import './style.scss';
 
 interface Props {
-  handleClose: (value: boolean) => void
+  handleClose: (value: boolean) => void;
 }
 
 function Header({ ...props }: Props) {
-  const { handleClose } = props
+  const { handleClose } = props;
 
   // const [value, setValue] = useState('')
   return (
@@ -53,7 +53,7 @@ function Header({ ...props }: Props) {
         </div>
       </Layout>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

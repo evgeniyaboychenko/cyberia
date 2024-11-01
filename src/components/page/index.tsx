@@ -1,10 +1,10 @@
-import { ReactNode } from 'react'
-import './style.scss'
+import { ReactNode } from 'react';
+import './style.scss';
 
 interface Props {
-  main?: ReactNode
-  header?: ReactNode
-  footer?: ReactNode
+  main?: ReactNode;
+  header?: ReactNode;
+  footer?: ReactNode;
 }
 
 function Page({ header, footer, main }: Props) {
@@ -14,7 +14,7 @@ function Page({ header, footer, main }: Props) {
       <main className='page__main'>{main}</main>
       {footer}
     </div>
-  )
+  );
 }
 
-export default Page
+export default Page;

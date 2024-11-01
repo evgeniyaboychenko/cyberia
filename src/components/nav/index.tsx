@@ -1,13 +1,13 @@
-import { navList } from '../../data/nav'
-import { Link } from 'react-router-dom'
-import './style.scss'
+import { navList } from '../../data/nav';
+import { Link } from 'react-router-dom';
+import './style.scss';
 
 interface Props {
-  mod?: string
+  mod?: string;
 }
 
 function Nav({ mod }: Props) {
-  const className = mod ? `nav nav${mod}` : 'nav'
+  const className = mod ? `nav nav${mod}` : 'nav';
   return (
     <nav className={className}>
       <ul className='nav__list'>
@@ -19,7 +19,7 @@ function Nav({ mod }: Props) {
         ))}
       </ul>
     </nav>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

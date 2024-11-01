@@ -1,0 +1,51 @@
+@use '../../styles//mixins.scss';
+@use '../../styles/constants.scss';
+
+.section__title {
+	--font-family: var(--font-family-3);
+	--text-size: 48px;
+	--text-weight: 600;
+	--text-line-height: 57.6px;
+	@include mixins.text;
+	margin-bottom: 20px;
+	text-align: left;
+	color: var(--color-text-2);
+
+	@include mixins.maxBp(constants.$bp-768) {
+		--font-family: var(--font-family-2);
+		--text-size: 21px;
+		--text-weight: 500;
+		--text-line-height: 24.89px;
+	}
+}
+
+.section {
+	padding: 0;
+}
+
+.section--form {
+	background-color: var(--page-bc-3);
+}
+
+.section--form .section__title {
+	@include mixins.maxBp(constants.$bp-768) {
+		padding-left: 80px;
+		--text-size: 24px;
+		--text-line-height: 28.44px;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			top: 50%;
+
+			left: 0;
+			width: 76px;
+			height: 71px;
+			transform: translate3d(0, -50%, 0);
+			content: '';
+			background-image: url('/src/assets/images/svg/title.svg');
+			background-repeat: no-repeat;
+			z-index: 0;
+		}
+	}
+}

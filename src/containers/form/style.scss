@@ -1,0 +1,62 @@
+@use '../../styles//mixins.scss';
+@use '../../styles/constants.scss';
+
+.form {
+	width: 100%;
+	display: grid;
+	gap: 30px
+}
+
+.form__wrap {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+
+	@include mixins.maxBp(constants.$bp-768) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.form__button {
+	justify-self: center;
+	width: fit-content;
+	--font-family: var(--font-family-3);
+	--text-size: 18px;
+	--text-weight: 400;
+	--text-line-height: 21.6px;
+	@include mixins.text;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 40px;
+	color: var(--color-text);
+	text-decoration: none;
+	background-color: var(--color-blue);
+	border: none;
+	border-radius: 85px;
+	transition:
+		opacity var(--transition),
+		background-color var(--transition);
+
+	@media (hover: hover) {
+
+		&:hover,
+		&:focus {
+			opacity: 0.7;
+		}
+
+		&:active {
+			background-color: var(--color-blue-2);
+		}
+
+		&:disabled {
+			background-color: var(--color-l-gray);
+			cursor: not-allowed;
+		}
+	}
+
+	&:disabled {
+		background-color: var(--color-l-gray);
+		cursor: not-allowed;
+	}
+}

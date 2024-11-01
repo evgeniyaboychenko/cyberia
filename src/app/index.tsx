@@ -6,14 +6,14 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-} from 'react-router-dom'
-import Main from './main'
-import Cases from './cases'
-import BurgerMenu from '../components/burger-menu'
+} from 'react-router-dom';
+import Main from './main';
+import Cases from './cases';
+import BurgerMenu from '../components/burger-menu';
 
-import { useState } from 'react'
+import { useState } from 'react';
 
-let router = createBrowserRouter(
+const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path={'/'} handle={{ crumb: <Link to='/'>Главная</Link> }}>
       <Route index element={<Main />}></Route>
@@ -26,10 +26,10 @@ let router = createBrowserRouter(
       />
     </Route>
   )
-)
+);
 
 function App() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   // return <RouterProvider router={router} />
 
@@ -56,7 +56,7 @@ function App() {
       </Routes> */}
       {visible && <BurgerMenu handleClose={setVisible}></BurgerMenu>}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

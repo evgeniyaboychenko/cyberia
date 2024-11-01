@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom'
-import './style.scss'
+import { Link } from 'react-router-dom';
+import './style.scss';
 
 interface Props {
-  href: string
-  title: string
-  description: string
-  image: string
+  href: string;
+  title: string;
+  description: string;
+  image: string;
 }
 
 function Case({ ...props }: Props) {
-  const { href, title, image, description } = props
+  const { href, title, image, description } = props;
   return (
     <div className='case'>
       <img className='case__image' src={image} />
@@ -18,7 +18,7 @@ function Case({ ...props }: Props) {
       </Link>
       <p className='case__description'>{description}</p>
     </div>
-  )
+  );
 }
 
-export default Case
+export default Case;

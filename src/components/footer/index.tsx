@@ -1,9 +1,9 @@
-import logo from '../../assets/images/svg/logo.svg'
-import Layout from '../layout'
-import Nav from '../nav'
-import Contacts from '../contacts'
-import { Link } from 'react-router-dom'
-import './style.scss'
+import logo from '../../assets/images/svg/logo.svg';
+import Layout from '../layout';
+import Nav from '../nav';
+import Contacts from '../contacts';
+import { Link } from 'react-router-dom';
+import './style.scss';
 
 function Footer() {
   return (
@@ -35,7 +35,7 @@ function Footer() {
         </div>
       </Layout>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

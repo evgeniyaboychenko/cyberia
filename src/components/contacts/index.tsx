@@ -1,5 +1,5 @@
-import { mail, phone, address } from '../../data/contacts'
-import './style.scss'
+import { mail, phone, address } from '../../data/contacts';
+import './style.scss';
 
 function Contacts() {
   return (
@@ -12,7 +12,7 @@ function Contacts() {
       </a>
       <div className='contacts__address'>{address}</div>
     </div>
-  )
+  );
 }
 
-export default Contacts
+export default Contacts;

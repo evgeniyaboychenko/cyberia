@@ -1,15 +1,15 @@
-import Page from '../../components/page'
-import Footer from '../../components/footer'
-import Header from '../../components/header'
-import Breadcrumbs from '../../components/breadcrumbs'
-import Layout from '../../components/layout'
+import Page from '../../components/page';
+import Footer from '../../components/footer';
+import Header from '../../components/header';
+import Breadcrumbs from '../../components/breadcrumbs';
+import Layout from '../../components/layout';
 
 interface Props {
-  handleClose?: (value: boolean) => void
+  handleClose?: (value: boolean) => void;
 }
 
 function Main({ ...props }: Props) {
-  const { handleClose = () => {} } = props
+  const { handleClose = () => {} } = props;
   return (
     <Page
       header={<Header handleClose={handleClose} />}
@@ -22,7 +22,7 @@ function Main({ ...props }: Props) {
       }
       footer={<Footer />}
     />
-  )
+  );
 }
 
-export default Main
+export default Main;
