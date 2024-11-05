@@ -19,7 +19,10 @@ class CasesStore {
   loadCases = async () => {
     try {
       this.isLoading = true;
-      const res = await axios.get<ResponseDataCases>(`/api/v1/projects`, {});
+      const res = await axios.get<ResponseDataCases>(
+        `https://api.test.cyberia.studio/api/v1/projects`,
+        {}
+      );
 
       if (res.status === 200) {
         runInAction(() => {

@@ -24,7 +24,8 @@ const router = createBrowserRouter(
         }}
       />
     </Route>
-  )
+  ),
+  { basename: '/cyberia' }
 );
 
 const App = observer(() => {

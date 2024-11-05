@@ -88,7 +88,7 @@ class FormStore {
       message: this.fields[FieldTypes.MESSAGE].value,
     });
 
-    const api = `/api/v1/feedbacks?${query.toString()}`;
+    const api = `https://api.test.cyberia.studio/api/v1/feedbacks?${query.toString()}`;
 
     try {
       this.isSubmitted = true;

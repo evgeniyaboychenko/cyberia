@@ -19,7 +19,10 @@ class CategoriesStore {
   loadCategories = async () => {
     try {
       this.isLoading = true;
-      const res = await axios.get<ResponseDataCategories>(`/api/v1/project-categories`, {});
+      const res = await axios.get<ResponseDataCategories>(
+        `https://api.test.cyberia.studio/api/v1/project-categories`,
+        {}
+      );
       if (res.status === 200) {
         runInAction(() => {
           this.categories = res.data.items;
