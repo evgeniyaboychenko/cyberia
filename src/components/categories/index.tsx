@@ -14,7 +14,7 @@ const CategoryList = observer(() => {
 
   return (
     <ul className='categories'>
-      {toJS(store.categoriesStore.categoryList).map((item) => (
+      {toJS(store.categoriesStore.categories).map((item) => (
         <li
           className={`categories__item${store.categoriesStore.category === item.id ? ' isActive' : ''}`}
           key={item.id}

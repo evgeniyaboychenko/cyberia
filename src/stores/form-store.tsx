@@ -92,11 +92,11 @@ class FormStore {
 
     try {
       this.isSubmitted = true;
-      const res = await axios.post(api, {});
+      const res = await axios.post<{ message: string }>(api, {});
       if (res.status === 200) {
         this.resetForm();
         this.isSubmitted = false;
-        alert(res.data.message);
+        alert(res.data?.message);
       }
     } catch (err) {
       if (axios.isAxiosError(err)) {

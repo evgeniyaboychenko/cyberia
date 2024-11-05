@@ -37,7 +37,8 @@ export interface InputField {
     | MessageValidationErrors
     | ConsentValidationErrors
     | ''
-    | string[];
+    | string[]
+    | undefined;
   value: string;
 }
 

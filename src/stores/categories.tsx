@@ -7,7 +7,7 @@ import { Categories, ResponseDataCategories } from '../types';
 
 class CategoriesStore {
   rootStore: RootStore;
-  categoryList: Categories[] = [];
+  categories: Categories[] = [];
   isLoading = false;
   category = '';
 
@@ -22,7 +22,7 @@ class CategoriesStore {
       const res = await axios.get<ResponseDataCategories>(`/api/v1/project-categories`, {});
       if (res.status === 200) {
         runInAction(() => {
-          this.categoryList = res.data.items;
+          this.categories = res.data.items;
           this.isLoading = false;
         });
       }

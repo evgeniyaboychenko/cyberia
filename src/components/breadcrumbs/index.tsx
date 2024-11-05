@@ -1,5 +1,5 @@
 import React from 'react';
-import { Params, useMatches, useLocation } from 'react-router-dom';
+import { Params, useMatches } from 'react-router-dom';
 import './style.scss';
 
 export interface IMatches {
@@ -19,22 +19,19 @@ export interface IMatches {
 }
 
 function Breadcrumbs() {
-  const matches: IMatches[] = useMatches();
-  const location = useLocation();
+  const matches: IMatches[] = useMatches() as IMatches[];
 
   const crumbs = matches
     .filter((match) => Boolean(match.handle?.crumb))
     .map((match) =>
       typeof match.handle.crumb === 'function' ? match.handle.crumb(match) : match.handle.crumb
     );
-  console.log('crumbs', crumbs);
   return (
     <div className='breadcrumbs'>
       <ul className='breadcrumbs__list'>
         {crumbs.map((crumb, index) => {
-          const className = crumb?.props.to === location.pathname ? ' is-active' : '';
           return (
-            <li key={index} className={`breadcrumbs__item${className}`}>
+            <li key={index} className={`breadcrumbs__item`}>
               {crumb}
             </li>
           );
