@@ -35,7 +35,8 @@ body:has(.burger-menu) {
 	width: 100%;
 	max-width: 375px;
 	height: 100%;
-	padding: 10px;
+	padding: 30px;
+	padding-top: 70px;
 	margin-left: auto;
 	margin-right: 0;
 	background-color: var(--page-bc-2);
@@ -54,8 +55,8 @@ body:has(.burger-menu) {
 
 .burger-menu__close {
 	position: absolute;
-	top: 14px;
-	right: 7px;
+	top: 30px;
+	right: 40px;
 	width: 35px;
 	height: 35px;
 	background-color: transparent;

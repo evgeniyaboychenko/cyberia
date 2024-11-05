@@ -6,6 +6,7 @@
 	position: relative;
 }
 
+
 .field__input {
 	width: 100%;
 	position: relative;
@@ -14,7 +15,7 @@
 
 	input {
 		width: 100%;
-		padding: 10px;
+		padding: 21px 10px;
 		color: var(--color-text-2);
 		background-color: transparent;
 		border: none;
@@ -25,16 +26,9 @@
 			opacity: 0.7;
 		}
 
-		&:focus,
-		&:active {
-			// opacity: 1;
-			// border-bottom: 2px solid rgba(43, 107, 243, 1);
-		}
+
 	}
 
-	// input::placeholder {
-	// 	opacity: 0.56;
-	// }
 }
 
 .field__label-text {
@@ -47,7 +41,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	transform: translate3d(10px, -10px, 0);
+	transform: translate3d(22px, -10px, 0);
 	color: var(--color-text-2);
 	background-color: var(--page-bc-3);
 	z-index: 10;
@@ -121,4 +115,12 @@
 .field__checkbox~.field__label-text {
 	position: relative;
 	transform: translate3d(0, 0, 0);
+}
+
+.field__error {
+	--font-family: var(--font-family-3);
+	--text-size: 14px;
+	--text-weight: 300;
+	@include mixins.text;
+	color: #2D76F9;
 }

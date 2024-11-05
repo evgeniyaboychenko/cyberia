@@ -8,11 +8,11 @@
 
 	border-radius: 12px;
 	overflow: hidden;
-	padding: 20px;
-	min-height: 378px;
+	padding: 25px 28px;
+	height: 378px;
 
 	@include mixins.maxBp(constants.$bp-768) {
-		min-height: 320px;
+		height: 320px;
 		background: linear-gradient(360deg, #090B21 0%, rgba(49, 51, 65, 0) 70.08%);
 	}
 
@@ -27,9 +27,11 @@
 	content: '';
 	z-index: -1;
 	object-fit: cover;
+	object-position: center;
 }
 
 .case__title {
+	font-weight: 600;
 	margin-left: auto;
 	position: relative;
 	display: inline-flex;
@@ -59,7 +61,13 @@
 	}
 
 	@include mixins.maxBp(constants.$bp-768) {
+		--font-family: var(--font-family-2);
+		--text-size: 18px;
+		--text-weight: 500;
+		--text-line-height: 21.33px;
+		@include mixins.text;
 		margin-left: 0;
+		margin-top: auto;
 		background-color: transparent;
 		height: auto;
 		text-align: left;
@@ -81,5 +89,15 @@
 .case__description {
 	margin: 0;
 	padding: 0;
+	display: none;
+
+	@include mixins.maxBp(constants.$bp-768) {
+		display: block;
+		--font-family: var(--font-family-1);
+		--text-size: 13px;
+		--text-weight: 400;
+		--text-line-height: 17.7px;
+		@include mixins.text;
+	}
 
 }

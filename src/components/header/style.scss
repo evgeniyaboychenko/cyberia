@@ -8,18 +8,29 @@
 	--text-line-height: 21.6px;
 	@include mixins.text;
 	background-color: var(--page-bc-gray);
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: 68px;
+	padding-bottom: 60px;
+
+	@include mixins.maxBp(constants.$bp-768) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 
 
 }
 
 .header__wrap {
 	display: grid;
-	grid-template-columns: 200px 1fr;
+	grid-template-columns: 223px 1fr;
 	gap: 100px;
 	justify-content: start;
 	align-items: center;
+
+	@include mixins.maxBp(constants.$bp-768) {
+		grid-template-columns: auto 40px;
+		gap: 20px;
+		justify-content: space-between;
+	}
 
 	// @include mixins.maxBp(constants.$bp-768) {
 	// 	grid-template-columns: 1fr;
@@ -33,6 +44,10 @@
 
 .header__logo img {
 	width: 132px;
+
+	@include mixins.maxBp(constants.$bp-768) {
+		width: 100px;
+	}
 }
 
 .header__logo {

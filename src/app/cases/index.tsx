@@ -6,25 +6,29 @@ import Layout from '../../components/layout';
 import Section from '../../components/section';
 import CaseList from '../../components/case-list';
 import Form from '../../containers/form';
+import CategoryList from '../../components/categories';
+import { observer } from 'mobx-react-lite';
 
-interface Props {
-  handleClose?: (value: boolean) => void;
-}
+// interface Props {
+//   openMenu: (value: boolean) => void;
+// }
 
-function Cases({ ...props }: Props) {
-  const { handleClose = () => {} } = props;
+const Cases = observer(() => {
+  // const { openMenu } = props;
+  // console.log('sddsds;ds');
   return (
     <Page
-      header={<Header handleClose={handleClose} />}
+      header={<Header />}
       main={
         <>
           <Layout>
             <Breadcrumbs></Breadcrumbs>
           </Layout>
           <Section title={'Кейсы'}>
+            <CategoryList></CategoryList>
             <CaseList></CaseList>
           </Section>
-          <Section mod='--form' title={'Расскажите о вашем проекте:'}>
+          <Section mod='--form' title={'Расскажите о\u00A0вашем проекте:'}>
             <Form></Form>
           </Section>
         </>
@@ -32,6 +36,6 @@ function Cases({ ...props }: Props) {
       footer={<Footer />}
     />
   );
-}
+});
 
 export default Cases;

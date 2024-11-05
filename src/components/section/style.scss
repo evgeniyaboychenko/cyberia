@@ -7,29 +7,41 @@
 	--text-weight: 600;
 	--text-line-height: 57.6px;
 	@include mixins.text;
-	margin-bottom: 20px;
+	margin-bottom: 68px;
 	text-align: left;
 	color: var(--color-text-2);
+	max-width: 380px;
 
 	@include mixins.maxBp(constants.$bp-768) {
 		--font-family: var(--font-family-2);
 		--text-size: 21px;
 		--text-weight: 500;
 		--text-line-height: 24.89px;
+		max-width: 100%;
+		margin-bottom: 42px;
 	}
 }
 
 .section {
 	padding: 0;
+	padding-bottom: 96px;
+
+	@include mixins.maxBp(constants.$bp-768) {
+		padding-bottom: 50px;
+	}
 }
 
 .section--form {
 	background-color: var(--page-bc-3);
+
+	@include mixins.maxBp(constants.$bp-768) {
+		padding-top: 40px;
+	}
 }
 
 .section--form .section__title {
 	@include mixins.maxBp(constants.$bp-768) {
-		padding-left: 80px;
+		padding-left: 106px;
 		--text-size: 24px;
 		--text-line-height: 28.44px;
 		position: relative;

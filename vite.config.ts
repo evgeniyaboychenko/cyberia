@@ -5,6 +5,15 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   // base: '/cyberia/',
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://api.test.cyberia.studio',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {

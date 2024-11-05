@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import Layout from '../layout';
 import './style.scss';
+import { observer } from 'mobx-react-lite';
 
 interface Props {
   children: ReactNode;
@@ -8,7 +9,7 @@ interface Props {
   mod?: string;
 }
 
-function Section({ ...props }: Props) {
+const Section = observer(({ ...props }: Props) => {
   const { title, mod, children } = props;
   const className = mod ? `section section${mod}` : 'section';
   return (
@@ -19,6 +20,6 @@ function Section({ ...props }: Props) {
       </Layout>
     </section>
   );
-}
+});
 
 export default Section;

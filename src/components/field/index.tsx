@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import { observer } from 'mobx-react-lite';
+import { FieldTypes } from '../../types';
 import './style.scss';
 
 interface Props {
@@ -6,19 +8,21 @@ interface Props {
   children: ReactNode;
   typeField?: string;
   error?: ReactNode;
+  name: FieldTypes;
+  isValid?: boolean;
 }
 
-function Field({ ...props }: Props) {
-  const { label, children, typeField = 'input', error } = props;
+const Field = observer(({ ...props }: Props) => {
+  const { label, children, typeField = 'input', error, isValid = true } = props;
   return (
     <div className='field'>
       <label className='field__label'>
         <div className={`field__${typeField}`}>{children}</div>
         <span className='field__label-text'>{label}</span>
       </label>
-      <div className='field__error'>{error}</div>
+      {isValid ? '' : <div className='field__error'>{error}</div>}
     </div>
   );
-}
+});
 
 export default Field;

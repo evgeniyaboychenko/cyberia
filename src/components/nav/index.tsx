@@ -14,7 +14,6 @@ function Nav({ mod }: Props) {
         {navList.map((item, index) => (
           <li className='nav__item' key={index}>
             <Link to={item.href}>{item.text}</Link>
-            {/* <a href={item.href}>{item.text}</a> */}
           </li>
         ))}
       </ul>

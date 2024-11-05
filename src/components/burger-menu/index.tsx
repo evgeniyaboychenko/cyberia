@@ -1,22 +1,22 @@
-import { useState } from 'react';
 import Nav from '../nav';
 import Contacts from '../contacts';
+import { observer } from 'mobx-react-lite';
+import { useStores } from '../../stores';
 import './style.scss';
 
-interface Props {
-  handleClose: (value: boolean) => void;
-}
-
-function BurgerMenu({ ...props }: Props) {
-  const { handleClose } = props;
-  const [value, setValue] = useState('');
+const BurgerMenu = observer(() => {
+  const store = useStores();
 
   return (
     <section className='burger-menu'>
-      <div className='burger-menu__overlay' onClick={() => handleClose(false)}></div>
+      <div className='burger-menu__overlay' onClick={() => store.burgerMenuStore.onClose()}></div>
       <div className='burger-menu__container'>
         <div className='burger-menu__body'>
-          <button type='button' className='burger-menu__close' onClick={() => handleClose(false)}>
+          <button
+            type='button'
+            className='burger-menu__close'
+            onClick={() => store.burgerMenuStore.onClose()}
+          >
             <svg
               width='32'
               height='32'
@@ -50,6 +50,6 @@ function BurgerMenu({ ...props }: Props) {
       </div>
     </section>
   );
-}
+});
 
 export default BurgerMenu;

@@ -3,16 +3,12 @@ import Footer from '../../components/footer';
 import Header from '../../components/header';
 import Breadcrumbs from '../../components/breadcrumbs';
 import Layout from '../../components/layout';
+import { observer } from 'mobx-react-lite';
 
-interface Props {
-  handleClose?: (value: boolean) => void;
-}
-
-function Main({ ...props }: Props) {
-  const { handleClose = () => {} } = props;
+const Main = observer(() => {
   return (
     <Page
-      header={<Header handleClose={handleClose} />}
+      header={<Header />}
       main={
         <>
           <Layout>
@@ -23,6 +19,6 @@ function Main({ ...props }: Props) {
       footer={<Footer />}
     />
   );
-}
+});
 
 export default Main;

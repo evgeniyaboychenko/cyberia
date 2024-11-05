@@ -1,0 +1,52 @@
+@use '../../styles//mixins.scss';
+@use '../../styles/constants.scss';
+
+.categories {
+	@include mixins.reset-list;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 40px;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-bottom: 52px;
+
+	@include mixins.maxBp(constants.$bp-768) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+	}
+}
+
+.categories__btn {
+	--font-family: var(--font-family-3);
+	--text-size: 24px;
+	--text-weight: 400;
+	--text-line-height: 28.8px;
+	@include mixins.text;
+	color: var(--color-text-2);
+	border: none;
+	border-radius: 7px;
+	box-shadow: 8px 15px 29px 0px rgba(23, 27, 44, 0.41);
+	background: rgba(49, 51, 65, 1);
+	padding: 10px 29px;
+	transition: opacity var(--transition);
+
+	@include mixins.maxBp(constants.$bp-768) {
+		--font-family: var(--font-family-1);
+		--text-size: 12px;
+		--text-weight: 400;
+		--text-line-height: 16.34px;
+		padding: 10px 5px;
+		width: 100%;
+	}
+
+	&:hover,
+	&:focus {
+		opacity: 0.8;
+	}
+}
+
+.categories__item.isActive .categories__btn {
+	box-shadow: 0px 14px 61px 0px #171B2CBF;
+	background-color: var(--color-blue);
+}

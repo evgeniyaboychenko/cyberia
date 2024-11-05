@@ -1,8 +1,5 @@
-import { useState } from 'react';
 import React from 'react';
-import { Params, useMatches, UIMatch, useLocation } from 'react-router-dom';
-import Nav from '../nav';
-import Contacts from '../contacts';
+import { Params, useMatches, useLocation } from 'react-router-dom';
 import './style.scss';
 
 export interface IMatches {
@@ -16,19 +13,14 @@ export interface IMatches {
   data: unknown;
   /** The <Route handle> with any app specific data. */
   handle: {
+    // eslint-disable-next-line no-unused-vars
     crumb: (param?: IMatches) => React.ReactNode;
   };
 }
 
-// interface Props {
-//   handleClose: (value: boolean) => void
-// }
-
 function Breadcrumbs() {
   const matches: IMatches[] = useMatches();
-  let location = useLocation();
-  console.log(location.pathname);
-  console.log('matches', matches);
+  const location = useLocation();
 
   const crumbs = matches
     .filter((match) => Boolean(match.handle?.crumb))
@@ -40,7 +32,6 @@ function Breadcrumbs() {
     <div className='breadcrumbs'>
       <ul className='breadcrumbs__list'>
         {crumbs.map((crumb, index) => {
-          console.log(crumb);
           const className = crumb?.props.to === location.pathname ? ' is-active' : '';
           return (
             <li key={index} className={`breadcrumbs__item${className}`}>

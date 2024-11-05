@@ -1,17 +1,15 @@
+/* eslint-disable no-unused-vars */
+import { useStores } from '../../stores';
+import { observer } from 'mobx-react-lite';
 import logo from '../../assets/images/svg/logo.svg';
 import Layout from '../layout';
 import Nav from '../nav';
 import { Link } from 'react-router-dom';
 import './style.scss';
 
-interface Props {
-  handleClose: (value: boolean) => void;
-}
+const Header = observer(() => {
+  const store = useStores();
 
-function Header({ ...props }: Props) {
-  const { handleClose } = props;
-
-  // const [value, setValue] = useState('')
   return (
     <header className='header'>
       <Layout>
@@ -19,24 +17,12 @@ function Header({ ...props }: Props) {
           <Link className='header__logo' to='/'>
             <img src={logo} />
           </Link>
-          {/* <a className='header__logo' href='#'></a> */}
           <Nav mod={'--header'}></Nav>
-          {/* <nav className='header__nav'>
-            <ul className='header__menu-list'>
-              {navList.map((item, index) => (
-                <li key={index}>
-                  <a href={item.href}>{item.text}</a>
-                </li>
-              ))}
-            </ul>
-          </nav> */}
-
-          {/* mobile version */}
           <button
             type='button'
             className='header__burger-menu btn'
             aria-label='Открыть меню'
-            onClick={() => handleClose(true)}
+            onClick={() => store.burgerMenuStore.onShow()}
           >
             <svg
               width='32'
@@ -54,6 +40,6 @@ function Header({ ...props }: Props) {
       </Layout>
     </header>
   );
-}
+});
 
 export default Header;

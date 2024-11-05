@@ -1,17 +1,16 @@
 import {
-  Routes,
   Route,
   Link,
-  UIMatch,
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
 } from 'react-router-dom';
+import { useRef } from 'react';
 import Main from './main';
 import Cases from './cases';
-import BurgerMenu from '../components/burger-menu';
-
-import { useState } from 'react';
+import RootStore from '../stores/root-store';
+import { RootStoreContext } from '../stores';
+import { observer } from 'mobx-react-lite';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,35 +27,15 @@ const router = createBrowserRouter(
   )
 );
 
-function App() {
-  const [visible, setVisible] = useState(false);
-
-  // return <RouterProvider router={router} />
-
+const App = observer(() => {
+  const store = useRef(new RootStore());
   return (
     <>
-      <RouterProvider router={router} />;
-      {/* <Routes>
-        <Route path={'/'} handle={{ crumb: <Link to='/'>Mainnn</Link> }}>
-          <Route
-            index
-            element={<Main />}
-            handle={{
-              crumb: () => <Link to='/'>Main</Link>,
-            }}
-          ></Route>
-          <Route
-            path={'/cases'}
-            element={<Cases />}
-            handle={{
-              crumb: () => <Link to='/cases'>casesbc</Link>,
-            }}
-          />
-        </Route>
-      </Routes> */}
-      {visible && <BurgerMenu handleClose={setVisible}></BurgerMenu>}
+      <RootStoreContext.Provider value={store.current}>
+        <RouterProvider router={router} />;
+      </RootStoreContext.Provider>
     </>
   );
-}
+});
 
 export default App;
